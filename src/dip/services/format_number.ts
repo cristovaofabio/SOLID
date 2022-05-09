@@ -2,6 +2,6 @@ import { FormatNumberProtocol } from "../classes/interfaces/format_number_protoc
 
 export class FormatNumber implements FormatNumberProtocol{
     newFormat(value: number): number {
-        return value.toFixed(2) as unknown as number
+        return Number(value.toFixed(2));
     }
 }

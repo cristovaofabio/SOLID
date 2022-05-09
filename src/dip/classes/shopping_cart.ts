@@ -20,7 +20,7 @@ export class ShoppingCart implements ShoppingCartProtocol {
     }
 
     removeProduct(index: number): void {
-        this._items.slice(index, 1);
+        this._items.splice(index, 1);
     }
 
     totalPrice(): number {
