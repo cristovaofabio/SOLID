@@ -1,17 +1,21 @@
 import { Messaging } from './messaging';
 
+const createSut = () => {
+    return new Messaging();
+}
+
 describe('MESSAGING', () => {
     afterEach(() => jest.clearAllMocks());
 
     it('should return undefined', () => {
-        const sut = new Messaging();
+        const sut = createSut();
         const message = 'Hello!';
 
         expect(sut.sendMessage(message)).toBeUndefined;
     });
 
     it('should call console.log once', () => {
-        const sut = new Messaging();
+        const sut = createSut();
         const message = 'Hello!';
         const consoleSpy = jest.spyOn(console, 'log');
 
@@ -20,7 +24,7 @@ describe('MESSAGING', () => {
     });
 
     it('should call console.log once "Hello!"', () => {
-        const sut = new Messaging();
+        const sut = createSut();
         const message = 'Hello!';
         const consoleSpy = jest.spyOn(console, 'log');
 
